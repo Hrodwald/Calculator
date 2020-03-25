@@ -21,8 +21,10 @@ namespace Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        Model m = new Model();
         public MainWindow()
         {
+            m.SplitCalc("1+2-3+5*2+(2+2)");
             InitializeComponent();
         }
 
