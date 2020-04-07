@@ -24,7 +24,7 @@ namespace Calculator
         Model m = new Model();
         public MainWindow()
         {
-            m.SplitCalc("1+2-3+5*2+(2+2)");
+            m.calcul("(12*3+5*(2+(3+7)))-3+5*2+(2+(-2+2))");
             InitializeComponent();
         }
 
