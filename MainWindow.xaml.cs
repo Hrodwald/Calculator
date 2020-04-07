@@ -138,6 +138,11 @@ namespace Calculator
         {
 
         }
+
+        private void textr_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
 
