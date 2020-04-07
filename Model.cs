@@ -41,8 +41,10 @@ namespace Calculator
                     }
                     if (c == '+' || c == '-' || c == '*' || c == '/')
                     {
-                        finalCalc = finalCalc.Insert(i, "|");
-                        finalCalc = finalCalc.Insert(i + 2, "|");
+                        
+                            finalCalc = finalCalc.Insert(i, "|");
+                            finalCalc = finalCalc.Insert(i + 2, "|");
+                        
                     }
                     // Increment the index.
                     i=i+3;
@@ -59,8 +61,12 @@ namespace Calculator
         public double calcul(string calc) 
         {
             List<string> toCalc = SplitCalc(calc);
-            handleParant(toCalc);
-
+            List<string> abc = handleParant(toCalc);
+            calcMaking("*", abc);
+            calcMaking("/", abc);
+            calcMaking("-", abc);
+            calcMaking("+", abc);
+            Console.Out.WriteLine(abc[0]);
 
 
 
@@ -69,7 +75,7 @@ namespace Calculator
 
         public List<string> handleParant(List<string> toCalc) 
         {
-            List<string> plainCalc = new List<string>();
+           
             int parantIndex;
             int closeParentIndex=0;
             while ((parantIndex = toCalc.FindIndex(r => r.Equals("("))) != -1)
@@ -96,8 +102,9 @@ namespace Calculator
                 {
                     calcMaking("*",tempList);
                     calcMaking("/", tempList);
-                    calcMaking("+", tempList);
                     calcMaking("-", tempList);
+                    calcMaking("+", tempList);
+                    
                     if (toCalc.Contains("(")) 
                     {
                         for (int x = parantIndex; x < closeParentIndex+1; x++)
@@ -114,11 +121,13 @@ namespace Calculator
                     {
                         toCalc.RemoveAt(parantIndex);
                     }
+
                     calcMaking("*", tmp);
                     calcMaking("/", tmp);
-                    calcMaking("+", tmp);
                     calcMaking("-", tmp);
-                    toCalc.Add(tmp[0]);
+                    calcMaking("+", tmp);
+                    
+                    toCalc.Insert(parantIndex,tmp[0]);
                 }
             }
             return toCalc;
@@ -130,14 +139,26 @@ namespace Calculator
             {
                 int index = tmpCalc.FindIndex(r => r.Equals(op));
 
-                double.TryParse(tmpCalc[index - 1], out double a);
-                double.TryParse(tmpCalc[index + 1], out double b);
-                for (int x = 0; x < 3; x++)
+                try {
+                    double b = double.Parse(tmpCalc[index + 1]);
+                    double a = double.Parse(tmpCalc[index - 1]);
+                    
+                        for (int x = 0; x < 3; x++)
+                    {
+                        tmpCalc.RemoveAt(index - 1);
+                    }
+                    tmpCalc.Insert(index - 1, makeCalc(op, a, b).ToString());
+                }catch(Exception ex)
                 {
-                    tmpCalc.RemoveAt(index - 1);
+                    double.TryParse(tmpCalc[index + 1], out double b);
+                    for (int x = 0; x < 2; x++)
+                    {
+                        tmpCalc.RemoveAt(index);
+                    }
+                    tmpCalc.Insert(index, makeCalc(op, 0, b).ToString());
                 }
-                tmpCalc.Insert(index - 1, makeCalc(op, a, b).ToString());
-            }
+                
+                }
         }
         public double makeCalc(string op, double a, double b)
         {
