@@ -79,15 +79,16 @@ namespace Calculator
             listbhisto.Clear
         }*/
 
-/*        #region listbhisto dependency property
-        public static readonly DependencyProperty ListbHProperty = DependencyProperty.Register("Listbhisto", typeof(ObservableCollection<String>), typeof(Window1));
+        /*
+        #region listbhisto dependency property
+        public static readonly DependencyProperty ListbHProperty = DependencyProperty.Register("Listbhisto", typeof(ObservableCollection<String>), typeof(Window));
 
         public ObservableCollection<String> Listbhisto
         {
             get { return (ObservableCollection<String>)GetValue(ListbHProperty); }
             set { SetValue(ListbHProperty, value); }
         }
-        #endregion*/
+        #endregion */
 
       
         private void Off_Click_1(object sender, RoutedEventArgs e)

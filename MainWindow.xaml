@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="Calculatrice"
         Height="414" 
-        MinHeight="370"
-        Width="657" 
+        MinHeight="400"
+        Width="657"
+        MinWidth="570"
         Background="DarkGray"
         ResizeMode="CanResize"
         WindowStartupLocation="CenterScreen" 
@@ -120,7 +121,7 @@
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
                     </Button.Background>
                 </Button>
-                <Button Content="x²" Margin="1,1,1,1" FontSize="18" BorderThickness="2" Click="R_Click" Grid.Column="1" Grid.Row="1">
+                <Button Content="(" Margin="1,1,1,1" FontSize="18" BorderThickness="2" Click="Button_Click_Op" Grid.Column="1" Grid.Row="1">
                     <Button.Foreground>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
                     </Button.Foreground>
@@ -131,7 +132,7 @@
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
                     </Button.Background>
                 </Button>
-                <Button Content="1/x" Margin="1,1,1,1" FontSize="18" BorderThickness="2" Click="Del_Click" Grid.Column="2" Grid.Row="1">
+                <Button Content=")" Margin="1,1,1,1" FontSize="18" BorderThickness="2" Click="Button_Click_Op" Grid.Column="2" Grid.Row="1">
                     <Button.Foreground>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
                     </Button.Foreground>
@@ -334,10 +335,10 @@
 
         </Grid>
 
-        <ListBox HorizontalAlignment="Center" Margin="24,63,0,10" VerticalAlignment="Stretch" Name="Listbhisto" Width="254" Grid.Column="2" />
+        <ListBox HorizontalAlignment="Left" Margin="24,63,3,0" VerticalAlignment="Stretch" Name="Listbhisto" Width="254" Grid.Column="2" />
         <Label Content="HISTORY :" HorizontalAlignment="Center" Height="38" Margin="24,20,35,0" VerticalAlignment="Top" Width="206" Foreground="Red" FontWeight="Bold" Grid.Column="2"/>
 
-        <Button Content="CLEAR" HorizontalAlignment="Right" Margin="151,38,5,0" VerticalAlignment="Top" Width="76" RenderTransformOrigin="0.44,-0.825" Grid.Column="2" Height="20">
+        <Button Content="CLEAR" HorizontalAlignment="Right" Margin="151,38,7,0" VerticalAlignment="Top" Width="76" RenderTransformOrigin="0.44,-0.825" Grid.Column="2" Height="20">
             <Button.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
             </Button.Foreground>
