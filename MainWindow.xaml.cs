@@ -34,6 +34,19 @@ namespace Calculator
             textb.Text += b.Content.ToString();
         }
 
+        //Gestion des touches du clavier
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                result();    
+            }
+            /*else
+            {
+                textb.Text = "Caractère non reconnu";
+            }*/
+        }
+
         //Gestion exception au click du bouton
         private void Result_click(object sender, RoutedEventArgs e)
         {
@@ -94,6 +107,11 @@ namespace Calculator
         }
 
         private void textr_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Listbhisto_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
