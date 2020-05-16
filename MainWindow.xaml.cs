@@ -115,7 +115,6 @@ namespace Calculator
                 textb.Text += "=" + (operation1 / operation2);
             }
         }
-
         private void Off_Click_1(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();

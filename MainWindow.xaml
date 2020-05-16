@@ -6,15 +6,15 @@
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
         Title="Calculatrice"
-        Height="370" 
+        Height="414" 
         MinHeight="370"
         Width="657" 
-        
+        Background="DarkGray"
         ResizeMode="CanResize"
         WindowStartupLocation="CenterScreen" 
-        
-        Topmost="True">
-    <Grid Background="Black" MinHeight="340" VerticalAlignment="Top" Opacity="0.75" Height="329">
+                Topmost="True">
+
+    <Grid Background="Black" MinHeight="340" VerticalAlignment="Stretch" Opacity="0.75" Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
@@ -51,7 +51,7 @@
                         </TextBox.Foreground>
                     </TextBox>
                 </Grid>
-                
+
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
@@ -70,7 +70,8 @@
                 </Grid.RowDefinitions>
 
                 <!-- Numbers-->
-                <Button Content="Off" Margin="1,1,1,1" FontSize="18" BorderThickness="2" Click="Off_Click_1" Grid.ColumnSpan="2">
+
+                <Button Content="Off" MinHeight="30" MinWidth="100" Margin="1,1,1,1" FontSize="18" BorderThickness="2" Click="Off_Click_1" Grid.ColumnSpan="2">
                     <Button.Foreground>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
                     </Button.Foreground>
@@ -81,7 +82,7 @@
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
                     </Button.Background>
                 </Button>
-                <Button Content="CE" Margin="1,1,1,1" FontSize="18" BorderThickness="2" Click="R_Click" Grid.Column="2">
+                <Button Content="CE" Margin="1,1,1,1" MinHeight="30" MinWidth="50" FontSize="18" BorderThickness="2" Click="R_Click" Grid.Column="2">
                     <Button.Foreground>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
                     </Button.Foreground>
@@ -289,7 +290,7 @@
                     <Button.Background>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
                     </Button.Background>
-                </Button>                
+                </Button>
                 <Button Content="0" Margin="1,1,1,1" FontSize="18" BorderThickness="2" Click="Button_Click_Op" Grid.Column="1" Grid.Row="5">
                     <Button.Foreground>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
@@ -328,7 +329,7 @@
 
         </Grid>
 
-        <ListBox HorizontalAlignment="Left" Height="210" Margin="24,66,0,0" VerticalAlignment="Top" Name="Listbhisto" Width="206" Grid.Column="2" ItemsSource="{Binding}"/>
+        <ListBox HorizontalAlignment="Left" Margin="24,63,0,10" VerticalAlignment="Stretch" Name="Listbhisto" Width="206" Grid.Column="2" ItemsSource="{Binding}" SelectionChanged="Listbhisto_SelectionChanged"/>
         <Label Content="HISTORY :" HorizontalAlignment="Center" Height="38" Margin="24,20,35,0" VerticalAlignment="Top" Width="206" Foreground="Red" FontWeight="Bold" Grid.Column="2"/>
 
         <Button Content="CLEAR" HorizontalAlignment="Left" Margin="154,286,0,0" VerticalAlignment="Top" Width="76" RenderTransformOrigin="0.44,-0.825" Grid.Column="2" Height="20">
@@ -343,4 +344,7 @@
             </Button.Background>
         </Button>
     </Grid>
+
+
+
 </Window>  
