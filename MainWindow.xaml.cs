@@ -39,7 +39,14 @@ namespace Calculator
         {
             if (e.Key == Key.Return)
             {
-                result();    
+                try
+                {
+                    textb.Text += "=" + m.calcul(textb.Text).ToString();
+                }
+                catch (Exception ex)
+                {
+                    textb.Text = "Error!";
+                }
             }
             /*else
             {
