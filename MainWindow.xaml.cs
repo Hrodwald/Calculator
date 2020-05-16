@@ -24,7 +24,7 @@ namespace Calculator
         Model m = new Model();
         public MainWindow()
         {
-            m.calcul("(12,2/3+5*(2,3+(3+7)))-3+5,5*2+(2+(-2+-2))");
+            //m.calcul("(12,2/3+5*(2,3+(3+7)))-3+5,5*2+(2+(-2+-2))");
             InitializeComponent();
         }
 
@@ -39,7 +39,7 @@ namespace Calculator
         {
             try
             {
-                result();
+                textb.Text += "=" + m.calcul(textb.Text).ToString();
             }
             catch (Exception ex)
             {
@@ -69,52 +69,7 @@ namespace Calculator
         }
         #endregion*/
 
-        private void result()
-        {
-            String operation;
-            int indexOperation = 0;
-            if (textb.Text.Contains("+"))
-            {
-                indexOperation = textb.Text.IndexOf("+");
-            }
-            else if (textb.Text.Contains("-"))
-            {
-                indexOperation = textb.Text.IndexOf("-");
-            }
-            else if (textb.Text.Contains("*"))
-            {
-                indexOperation = textb.Text.IndexOf("*");
-            }
-            else if (textb.Text.Contains("/"))
-            {
-                indexOperation = textb.Text.IndexOf("/");
-            }
-            else
-            {
-                //error    
-            }
-
-            operation = textb.Text.Substring(indexOperation, 1);
-            double operation1 = Convert.ToDouble(textb.Text.Substring(0, indexOperation));
-            double operation2 = Convert.ToDouble(textb.Text.Substring(indexOperation + 1, textb.Text.Length - indexOperation - 1));
-
-            if (operation == "+")
-            {
-                textb.Text += "=" + (operation1 + operation2);
-            }
-            else if (operation == "-")
-            {
-                textb.Text += "=" + (operation1 - operation2);
-            }
-            else if (operation == "*")
-            {
-                textb.Text += "=" + (operation1 * operation2);
-            }
-            else
-            {
-                textb.Text += "=" + (operation1 / operation2);
-            }
-        }
+      
         private void Off_Click_1(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();

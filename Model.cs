@@ -70,7 +70,7 @@ namespace Calculator
 
 
 
-            return 0;
+            return Double.Parse(abc[0]);
         }
 
         public List<string> handleParant(List<string> toCalc) 

@@ -329,7 +329,7 @@
 
         </Grid>
 
-        <ListBox HorizontalAlignment="Left" Margin="24,63,0,10" VerticalAlignment="Stretch" Name="Listbhisto" Width="206" Grid.Column="2" ItemsSource="{Binding}" SelectionChanged="Listbhisto_SelectionChanged"/>
+        <ListBox HorizontalAlignment="Left" Margin="24,63,0,10" VerticalAlignment="Stretch" Name="Listbhisto" Width="206" Grid.Column="2" />
         <Label Content="HISTORY :" HorizontalAlignment="Center" Height="38" Margin="24,20,35,0" VerticalAlignment="Top" Width="206" Foreground="Red" FontWeight="Bold" Grid.Column="2"/>
 
         <Button Content="CLEAR" HorizontalAlignment="Left" Margin="151,38,0,0" VerticalAlignment="Top" Width="76" RenderTransformOrigin="0.44,-0.825" Grid.Column="2" Height="20">
