@@ -101,7 +101,12 @@ namespace Calculator
             {
                 try
                 {
-                    Resultat = "=" + m.calcul(textb.Text).ToString();
+                    Saisie=textb.Text;
+                    /*Solution proposée pour régler le problème de la première parenthèse...mais ne suffit pas visiblement)
+                    /*if(Saisie.Substring(0,1)=="("){
+                    Saisie= "1*"+Saisie;
+                    }*/
+                    Resultat = "=" + m.calcul(Saisie).ToString();
                     Historique newHisto = new Historique() { ResultatHisto = Resultat, SaisieHisto = Saisie };
                     MonHistorique.Add(newHisto);
                 }
@@ -110,9 +115,9 @@ namespace Calculator
                     Saisie = "Error!";
                 }
             }
-            else 
+            else if(e.Key == Key.Delete)
             {
-                // Saisie += e.Key;
+                Saisie = "";
             }
             
         }
@@ -147,7 +152,7 @@ namespace Calculator
 
         private void Del_Click(object sender, RoutedEventArgs e)
         {
-            textb.Text = "";
+            Saisie = "";    
         }
 
         private void R_Click(object sender, RoutedEventArgs e)
