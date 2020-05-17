@@ -14,7 +14,7 @@
         ResizeMode="CanResize"
         WindowStartupLocation="CenterScreen" 
         KeyDown="OnKeyDownHandler"
-                Topmost="True">
+        Topmost="True">
 
     <Grid Background="Black" MinHeight="340" VerticalAlignment="Stretch" Opacity="0.75" Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
