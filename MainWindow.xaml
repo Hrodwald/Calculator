@@ -13,11 +13,7 @@
         Background="DarkGray"
         ResizeMode="CanResize"
         WindowStartupLocation="CenterScreen" 
-<<<<<<< HEAD
-        KeyDown="OnKeyDownHandler"
-=======
         PreviewKeyDown="OnKeyDownHandler"
->>>>>>> d17ecf4e9f2c29a891ba0afa12763187bdcec63e
         Topmost="True">
 
     <Grid Background="Black" MinHeight="340" VerticalAlignment="Stretch" Opacity="0.75" Margin="0,0,0,0"
@@ -126,7 +122,7 @@
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
                     </Button.Background>
                 </Button>
-                <Button Content="x²" Margin="1,1,1,1" FontSize="18" BorderThickness="2" Click="R_Click" Grid.Column="1" Grid.Row="1" Focusable="False">
+                <Button Content="(" Margin="1,1,1,1" FontSize="18" BorderThickness="2" Click="Button_Click_Op" Grid.Column="1" Grid.Row="1" Focusable="False">
                     <Button.Foreground>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
                     </Button.Foreground>
@@ -137,7 +133,7 @@
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
                     </Button.Background>
                 </Button>
-                <Button Content="1/x" Margin="1,1,1,1" FontSize="18" BorderThickness="2" Click="Del_Click" Grid.Column="2" Grid.Row="1" Focusable="False">
+                <Button Content=")" Margin="1,1,1,1" FontSize="18" BorderThickness="2" Click="Button_Click_Op" Grid.Column="2" Grid.Row="1" Focusable="False">
                     <Button.Foreground>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
                     </Button.Foreground>
